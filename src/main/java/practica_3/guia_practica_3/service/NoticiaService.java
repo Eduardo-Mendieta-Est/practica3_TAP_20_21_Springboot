@@ -31,4 +31,9 @@ public class NoticiaService {
     public List<Noticia> getNoticias(){
         return noticiaRepository.findAll();
     }
+
+
+    public List<Noticia> getNoticiasPorUsuario(String idUsuario){
+        return noticiaRepository.findByIdUsuario(idUsuario);
+    }
 }

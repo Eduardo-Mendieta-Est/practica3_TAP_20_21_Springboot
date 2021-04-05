@@ -32,4 +32,10 @@ public class NoticiaController {
     public List<Noticia> getNoticias(){
         return noticiaService.getNoticias();
     }
+
+
+    @GetMapping("/noticias/{idUsuario}")
+    public List<Noticia> getNoticiasPorUsuario(@PathVariable String idUsuario){
+        return noticiaService.getNoticiasPorUsuario(idUsuario);
+    }
 }
