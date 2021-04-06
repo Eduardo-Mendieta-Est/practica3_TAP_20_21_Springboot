@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import practica_3.guia_practica_3.model.Noticia;
 import practica_3.guia_practica_3.service.NoticiaService;
+import practica_3.guia_practica_3.util.HttpResponse;
 
 @RestController
 @RequestMapping("app")
@@ -33,9 +34,19 @@ public class NoticiaController {
         return noticiaService.getNoticias();
     }
 
+    /* -------------------- Consultas Frecuentes sobre la base de datos -------------------- */ 
+
+    /**noticias por usuario: */ 
 
     @GetMapping("/noticias/{idUsuario}")
-    public List<Noticia> getNoticiasPorUsuario(@PathVariable String idUsuario){
+    public HttpResponse<Noticia> getNoticiasPorUsuario(@PathVariable String idUsuario){
         return noticiaService.getNoticiasPorUsuario(idUsuario);
     }
+
+    /** Obtener 10 ultimas noticias publicadas */
+    /*@GetMapping("/noticias/ultimas-noticias")
+    public HttpResponse<Noticia> getUltimasNoticias(){
+        return noticiaService.getUltimasNoticias();
+    }*/
+
 }

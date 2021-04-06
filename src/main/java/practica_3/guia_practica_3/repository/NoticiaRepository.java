@@ -11,4 +11,5 @@ import practica_3.guia_practica_3.model.Noticia;
 public interface NoticiaRepository extends MongoRepository<Noticia, String>{
     
     public List<Noticia> findByIdUsuario(String idUsuario);
+
 }
