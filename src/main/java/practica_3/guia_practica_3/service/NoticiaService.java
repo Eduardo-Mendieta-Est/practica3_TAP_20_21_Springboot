@@ -1,7 +1,5 @@
 package practica_3.guia_practica_3.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -26,17 +24,21 @@ public class NoticiaService {
     private MongoTemplate mongoTemplate;
 
 
-    public boolean crearNoticia(Noticia nuevaNoticia, String idUsuario){
-        if(usuarioRepository.findById(idUsuario).isPresent()){
-            nuevaNoticia.setIdUsuario(idUsuario);
-            noticiaRepository.save(nuevaNoticia);
-            return true;
-        }else return false;
+    public Response<Noticia> crearNoticia(Noticia nuevaNoticia, String idUsuario){
+        try {
+            if(usuarioRepository.findById(idUsuario).isPresent()){
+                nuevaNoticia.setIdUsuario(idUsuario);
+                noticiaRepository.save(nuevaNoticia);
+                return new Response<>(201, "Recurso Creado con exito!",null);
+            }else return new Response<>(400, "Intenta acceder a un recurso inexistente!",null);
+        } catch (Exception e) {
+            return new Response<>(500, "Error en el servidor! :c!",null);
+        }
     }
 
 
-    public List<Noticia> getNoticias(){
-        return noticiaRepository.findAll();
+    public Response<Noticia> getNoticias(){
+        return new Response<>(200, "Ok", noticiaRepository.findAll());
     }
 
 

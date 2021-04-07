@@ -1,7 +1,5 @@
 package practica_3.guia_practica_3.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +29,7 @@ public class UsuarioController {
 
 
     @GetMapping("/usuarios")
-    public List<Usuario>getUuarios(){
+    public Response<Usuario>getUuarios(){
         return usuarioService.getUsuarios();
     }
 

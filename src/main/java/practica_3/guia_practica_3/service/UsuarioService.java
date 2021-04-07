@@ -37,8 +37,8 @@ public class UsuarioService {
     }
 
 
-    public List<Usuario>getUsuarios(){
-        return usuarioRepository.findAll();
+    public Response<Usuario> getUsuarios(){
+        return new Response<>(200, "Ok",  usuarioRepository.findAll());
     }
 
 

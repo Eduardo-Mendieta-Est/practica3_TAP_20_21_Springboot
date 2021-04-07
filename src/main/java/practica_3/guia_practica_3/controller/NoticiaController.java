@@ -1,7 +1,5 @@
 package practica_3.guia_practica_3.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,12 +23,12 @@ public class NoticiaController {
 
 
     @PostMapping("/noticias/{idUsuario}")
-    public boolean crearNoticia(@RequestBody Noticia nuevaNoticia, @PathVariable String idUsuario){
+    public Response<Noticia> crearNoticia(@RequestBody Noticia nuevaNoticia, @PathVariable String idUsuario){
         return noticiaService.crearNoticia(nuevaNoticia, idUsuario);
     }
 
     @GetMapping("/noticias")
-    public List<Noticia> getNoticias(){
+    public Response<Noticia> getNoticias(){
         return noticiaService.getNoticias();
     }
 
