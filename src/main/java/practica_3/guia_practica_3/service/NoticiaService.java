@@ -3,6 +3,9 @@ package practica_3.guia_practica_3.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import practica_3.guia_practica_3.model.Noticia;
@@ -18,6 +21,9 @@ public class NoticiaService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
 
     public boolean crearNoticia(Noticia nuevaNoticia, String idUsuario){
@@ -42,8 +48,9 @@ public class NoticiaService {
     }
 
     /** Obtener 10 ultimas noticias publicadas */
-   /* public HttpResponse<Noticia> getUltimasNoticias(){
+    public Response<Noticia> getUltimasNoticias(){
         Query query = new Query();
-        query.addCriteria(criteriaDefinition)
-    }*/
+        query.with(Sort.by(Sort.Direction.DESC, "fechaPublicacion")).limit(2);
+        return new Response<>(200, "Ok",mongoTemplate.find(query, Noticia.class));
+    }
 }

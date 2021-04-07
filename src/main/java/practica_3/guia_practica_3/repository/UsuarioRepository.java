@@ -16,10 +16,4 @@ public interface UsuarioRepository extends MongoRepository<Usuario, String>{
     public List<Usuario> findByCuentaTwitter(String cuentaTwitter);
     public List<Usuario> findByCuentaInstagram(String cuentaInstagram);
     public List<Usuario> findByDireccion(Direccion direccion);
-
-   /* @Query("'telefonos' : [ ?0 ]")
-    List<Usuario> findByTelefono(String telefono);*/
-
-    /*@Query("'direccion : {'codigoPostal' : ?0}'")
-    List<Usuario> findByCodigoPostal(String codigoPostal);*/
 }

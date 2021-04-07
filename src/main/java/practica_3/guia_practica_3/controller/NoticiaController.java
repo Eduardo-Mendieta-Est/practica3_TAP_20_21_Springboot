@@ -44,9 +44,9 @@ public class NoticiaController {
     }
 
     /** Obtener 10 ultimas noticias publicadas */
-    /*@GetMapping("/noticias/ultimas-noticias")
-    public HttpResponse<Noticia> getUltimasNoticias(){
+    @GetMapping("/noticias/ultimas-noticias")
+    public Response<Noticia> getUltimasNoticias(){
         return noticiaService.getUltimasNoticias();
-    }*/
+    }
 
 }
