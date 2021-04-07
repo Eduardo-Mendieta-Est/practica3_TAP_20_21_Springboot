@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import practica_3.guia_practica_3.model.Noticia;
 import practica_3.guia_practica_3.service.NoticiaService;
-import practica_3.guia_practica_3.util.HttpResponse;
+import practica_3.guia_practica_3.util.Response;
 
 @RestController
 @RequestMapping("app")
@@ -39,7 +39,7 @@ public class NoticiaController {
     /**noticias por usuario: */ 
 
     @GetMapping("/noticias/{idUsuario}")
-    public HttpResponse<Noticia> getNoticiasPorUsuario(@PathVariable String idUsuario){
+    public Response<Noticia> getNoticiasPorUsuario(@PathVariable String idUsuario){
         return noticiaService.getNoticiasPorUsuario(idUsuario);
     }
 

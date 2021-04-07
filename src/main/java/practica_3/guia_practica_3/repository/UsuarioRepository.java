@@ -19,4 +19,7 @@ public interface UsuarioRepository extends MongoRepository<Usuario, String>{
 
    /* @Query("'telefonos' : [ ?0 ]")
     List<Usuario> findByTelefono(String telefono);*/
+
+    /*@Query("'direccion : {'codigoPostal' : ?0}'")
+    List<Usuario> findByCodigoPostal(String codigoPostal);*/
 }

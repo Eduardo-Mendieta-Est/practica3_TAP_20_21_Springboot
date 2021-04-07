@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class HttpResponse<T> {
+public class Response<T> {
     
     private int codigoHttp;
     private String descripcion;

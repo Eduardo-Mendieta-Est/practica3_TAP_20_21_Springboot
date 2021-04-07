@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import practica_3.guia_practica_3.model.Noticia;
 import practica_3.guia_practica_3.repository.NoticiaRepository;
 import practica_3.guia_practica_3.repository.UsuarioRepository;
-import practica_3.guia_practica_3.util.HttpResponse;
+import practica_3.guia_practica_3.util.Response;
 
 @Service
 public class NoticiaService {
@@ -37,8 +37,8 @@ public class NoticiaService {
     /* -------------------- Consultas Frecuentes sobre la base de datos -------------------- */ 
 
     /**noticias por usuario: */ 
-    public HttpResponse<Noticia> getNoticiasPorUsuario(String idUsuario){
-        return new HttpResponse<>(200, "Ok", noticiaRepository.findByIdUsuario(idUsuario));
+    public Response<Noticia> getNoticiasPorUsuario(String idUsuario){
+        return new Response<>(200, "Ok", noticiaRepository.findByIdUsuario(idUsuario));
     }
 
     /** Obtener 10 ultimas noticias publicadas */

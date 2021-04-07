@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import practica_3.guia_practica_3.model.Usuario;
 import practica_3.guia_practica_3.service.UsuarioService;
-import practica_3.guia_practica_3.util.HttpResponse;
+import practica_3.guia_practica_3.util.Response;
 
 @RestController
 @RequestMapping("app")
@@ -25,7 +25,7 @@ public class UsuarioController {
 
 
     @PostMapping("/usuarios")
-    public HttpResponse<Usuario> crearUsuario(@RequestBody Usuario nuevoUsuario){
+    public Response<Usuario> crearUsuario(@RequestBody Usuario nuevoUsuario){
         return usuarioService.crearUsuario(nuevoUsuario);
     }
 
@@ -40,34 +40,34 @@ public class UsuarioController {
     /**Consulta por Nombre Usuario, Facebook, Instagram y Twitter: */
 
     @GetMapping("/usuarios/nombre-usuario/{nombreUsuario}")
-    public HttpResponse<Usuario> getUsuariosPorNombreUsuario(@PathVariable String nombreUsuario){
+    public Response<Usuario> getUsuariosPorNombreUsuario(@PathVariable String nombreUsuario){
         return usuarioService.getUsuariosPorNombreUsuario(nombreUsuario);
     }
 
     @GetMapping("/usuarios/cta-facebook/{ctaFacebook}")
-    public HttpResponse<Usuario> getUsuariosPorCtaFacebook(@PathVariable String ctaFacebook){
+    public Response<Usuario> getUsuariosPorCtaFacebook(@PathVariable String ctaFacebook){
         return usuarioService.getUsuariosPorCtaFacebook(ctaFacebook);
     }
 
     @GetMapping("/usuarios/cta-twitter/{ctaTwitter}")
-    public HttpResponse<Usuario> getUsuariosPorCtaTwitter(@PathVariable String ctaTwitter){
+    public Response<Usuario> getUsuariosPorCtaTwitter(@PathVariable String ctaTwitter){
         return usuarioService.getUsuariosPorCtaTwitter(ctaTwitter);
     }
 
     @GetMapping("/usuarios/cta-instagram/{ctaInstagram}")
-    public HttpResponse<Usuario> getUsuariosPorCtaInstagram(@PathVariable String ctaInstagram){
+    public Response<Usuario> getUsuariosPorCtaInstagram(@PathVariable String ctaInstagram){
         return usuarioService.getUsuariosPorCtaInstagram(ctaInstagram);
     }
 
     /**Agrupacion por codigo postal: */
-    @GetMapping("/usuarios/cp")
-    public HttpResponse<String> getNumeroUsuariosPorCodPostal(){
-        return usuarioService.getNumeroUsuariosPorCodPostal();
+    @GetMapping("/usuarios/cp/{codigoPostal}")
+    public Response<Long> getNumeroUsuariosPorCodPostal(@PathVariable String codigoPostal){
+        return usuarioService.getNumeroUsuariosPorCodPostal(codigoPostal);
     }
 
      /** consulta por numero de teléfono: */
      @GetMapping("/usuarios/telefono/{telefono}")
-     public HttpResponse<Usuario> getUsuariosPorTelefono(@PathVariable String telefono){
+     public Response<Usuario> getUsuariosPorTelefono(@PathVariable String telefono){
         return usuarioService.getUsuariosPorTelefono(telefono);
      }
 }
