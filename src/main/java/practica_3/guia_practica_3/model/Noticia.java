@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 
+/**@author Christian Eduardo Mendieta Tenesaca */
+
 @Data
 @Document(collection = "noticias")
 public class Noticia {

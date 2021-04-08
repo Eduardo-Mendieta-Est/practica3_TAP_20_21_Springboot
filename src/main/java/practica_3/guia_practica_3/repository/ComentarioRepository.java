@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import practica_3.guia_practica_3.model.Comentario;
 
+/**@author Christian Eduardo Mendieta Tenesaca */
+
 @Repository
 public interface ComentarioRepository extends MongoRepository<Comentario, String>{
     

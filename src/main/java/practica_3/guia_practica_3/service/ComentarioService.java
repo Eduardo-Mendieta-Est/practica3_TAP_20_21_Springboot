@@ -16,6 +16,8 @@ import practica_3.guia_practica_3.repository.NoticiaRepository;
 import practica_3.guia_practica_3.repository.UsuarioRepository;
 import practica_3.guia_practica_3.util.Response;
 
+/**@author Christian Eduardo Mendieta Tenesaca */
+
 @Service
 public class ComentarioService {
     

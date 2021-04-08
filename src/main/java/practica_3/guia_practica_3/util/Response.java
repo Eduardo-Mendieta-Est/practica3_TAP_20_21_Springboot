@@ -5,6 +5,8 @@ import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+/**@author Christian Eduardo Mendieta Tenesaca */
+
 @Data
 @AllArgsConstructor
 public class Response<T> {

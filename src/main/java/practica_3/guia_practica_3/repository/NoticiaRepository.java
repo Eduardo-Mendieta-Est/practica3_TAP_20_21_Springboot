@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import practica_3.guia_practica_3.model.Noticia;
 
+/**@author Christian Eduardo Mendieta Tenesaca */
+
 @Repository
 public interface NoticiaRepository extends MongoRepository<Noticia, String>{
     

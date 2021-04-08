@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import practica_3.guia_practica_3.model.Direccion;
 import practica_3.guia_practica_3.model.Usuario;
 
+/**@author Christian Eduardo Mendieta Tenesaca */
+
 @Repository
 public interface UsuarioRepository extends MongoRepository<Usuario, String>{
     

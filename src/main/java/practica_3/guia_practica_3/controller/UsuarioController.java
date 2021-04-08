@@ -13,6 +13,9 @@ import practica_3.guia_practica_3.model.Usuario;
 import practica_3.guia_practica_3.service.UsuarioService;
 import practica_3.guia_practica_3.util.Response;
 
+
+/**@author Christian Eduardo Mendieta Tenesaca */
+
 @RestController
 @RequestMapping("app")
 @CrossOrigin("*")
